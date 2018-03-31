@@ -22,11 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="http://localhost:8080/SimpleSSM/cross" method="post">
-    	请输入你要查询的id:<input type="text" name="id"/>
-    	               <input type="submit" value="提交"/>
-    </form>
-    用户信息:
-    <td>${name}</td>
+  <script type="text/javascript">
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8080/SimpleSSM/find?id=1",
+        success:function(res){
+            console.log(res)
+        }
+    })
+</script>
+  
   </body>
 </html>
